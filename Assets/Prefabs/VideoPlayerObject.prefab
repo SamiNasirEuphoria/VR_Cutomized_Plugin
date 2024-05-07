@@ -381,18 +381,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182916799574052318}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 157}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -80}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7182916800138809676}
   m_Father: {fileID: 7182916800260614177}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 308, y: 0}
   m_SizeDelta: {x: 500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7182916799574052317
@@ -617,12 +617,12 @@ GameObject:
   - component: {fileID: 7182916799910064022}
   - component: {fileID: 7182916799910063721}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas(Old)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7182916799910063720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -637,7 +637,7 @@ RectTransform:
   m_Children:
   - {fileID: 7182916799689600125}
   - {fileID: 5286394920295007340}
-  m_Father: {fileID: 7182916800602647233}
+  m_Father: {fileID: 8108726961202690345}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -763,17 +763,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8efd9d8e0e34375847852b9acb5d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotspotButtonPrefab: {fileID: 6740582428394954576, guid: 4749f321a83644c77b2a55155154b465,
-    type: 3}
   backToMain: {fileID: 7182916800138809677}
-  contentObjectOfHotspot: {fileID: 5286394918673952360}
+  hotspotButtonPrefab: {fileID: 1025238495793268408, guid: 2aab9a899fda44ebf8a2a9aa7dcc80b4,
+    type: 3}
+  contentObjectOfHotspot: {fileID: 7182916800602647232}
   hotspotObjectPrefab: {fileID: 2753929755126199352, guid: e92c64e78a5e146699b457684f6d51ba,
     type: 3}
   mainEnvironment: {fileID: 7182916800260614176}
   hotspotLabel: 
   videoPlayer: {fileID: 0}
   mainVideoPlayer: {fileID: 6020110031638875708}
+  i: 0
   videoName: 
+  rows: 3
+  columns: 3
+  spacing: 1
 --- !u!1 &7182916800138809679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1010,7 @@ Transform:
   m_Children:
   - {fileID: 7182916799574052314}
   - {fileID: 7215999949322240410}
-  - {fileID: 7182916800602647233}
+  - {fileID: 8108726961202690345}
   m_Father: {fileID: 7182916800084196189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1018,7 +1022,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7182916800602647233}
+  - component: {fileID: 8108726961202690345}
   m_Layer: 0
   m_Name: HotspotCanves
   m_TagString: Untagged
@@ -1026,22 +1030,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7182916800602647233
-Transform:
+--- !u!224 &8108726961202690345
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7182916800602647232}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 248, y: 0, z: -99}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7182916799910063720}
   m_Father: {fileID: 7182916800260614177}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8029831361494162208
 GameObject:
   m_ObjectHideFlags: 0

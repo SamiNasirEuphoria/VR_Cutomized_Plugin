@@ -146,7 +146,11 @@ public class MyEditorWindow : EditorWindow
 
             if (GUILayout.Button("Add Hotspot"))
             {
-                sceneData.hotspots.Add(new HotspotData());
+                if (sceneData.hotspots.Count < 10)
+                {
+                    sceneData.hotspots.Add(new HotspotData());
+                }
+              
             }
 
             EditorGUILayout.EndVertical();
@@ -187,7 +191,7 @@ public class MyEditorWindow : EditorWindow
     private void SpawnVideoButtons()
     {
         GameObject contentObject = GameObject.Find("Content");
-        GameObject videoButtonPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/VideoButton.prefab");
+        GameObject videoButtonPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/VideoButtonNew.prefab");
         GameObject videoObjectHolder = GameObject.Find("VideoPlayerObject");
         GameObject videoObjectPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/VideoPlayerObject.prefab");
         if (contentObject == null)
@@ -210,6 +214,11 @@ public class MyEditorWindow : EditorWindow
             //new line of code added
             VideoButton myButton = videoButtonInstance.GetComponent<VideoButton>();
             myButton.buttonVideoObject = videoObject;
+
+            Sprite sprite = Sprite.Create(sceneDataList[i].thumbnail, new Rect(0, 0, sceneDataList[i].thumbnail.width, sceneDataList[i].thumbnail.height), Vector2.one * 0.5f);
+
+            myButton.buttonImage.sprite = sprite;
+
             VideoPlayerManager videoObjectData = videoObject.GetComponent<VideoPlayerManager>();
             myButton.myLabelText.text = sceneDataList[i].tagline;
             // now project shifted from passing data into buttons to gameobjects video
@@ -226,10 +235,11 @@ public class MyEditorWindow : EditorWindow
             {
                 obj.sceneTagline = obj.sceneTagline;
             }
-            //videoObjectData.buttonTagline.text = videoObjectData.sceneTagline;
-            obj.hotspotLenght = sceneDataList[i].hotspots.Count;
-            //videoObjectData.InstantiateHotspotObjects();
             
+            obj.hotspotLenght = sceneDataList[i].hotspots.Count;
+            
+
+            videoObjectData.count = 0;
             for (int k = 0; k < sceneDataList[i].hotspots.Count; k++)
             {
                 HotspotData hotspotData = sceneDataList[i].hotspots[k];

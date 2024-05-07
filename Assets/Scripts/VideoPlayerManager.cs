@@ -5,12 +5,18 @@ using UnityEngine.UI;
 using RenderHeads.Media.AVProVideo;
 public class VideoPlayerManager : MonoBehaviour
 {
-    public Button hotspotButtonPrefab, backToMain;
-    public GameObject contentObjectOfHotspot, hotspotObjectPrefab, mainEnvironment;
+    public Button backToMain;
+    public GameObject hotspotButtonPrefab, contentObjectOfHotspot, hotspotObjectPrefab, mainEnvironment;
     public string hotspotLabel;
     public MediaPlayer videoPlayer;
     public ApplyToMesh mainVideoPlayer;
+    public int count;
     public string videoName;
+
+
+    public int rows = 3; // Number of rows in the grid
+    public int columns = 3; // Number of columns in the grid
+    public float spacing = 1.0f; // Spacing between objects in the grid
     private void OnEnable()
     {
 
@@ -22,7 +28,9 @@ public class VideoPlayerManager : MonoBehaviour
     public void InstantiateHotspotObjects()
     {
         GameObject refObj = Instantiate(hotspotObjectPrefab, this.gameObject.transform);
-        Button btnObj = Instantiate(hotspotButtonPrefab, contentObjectOfHotspot.transform);
+        GameObject btnObj = Instantiate(hotspotButtonPrefab, contentObjectOfHotspot.transform);
+        btnObj.transform.position = new Vector3(btnObj.transform.position.x, btnObj.transform.position.y + count, btnObj.transform.position.z);
+        count -= 60;
         HotspotButton btn = btnObj.GetComponent<HotspotButton>();
         btn.mainEnvironment = mainEnvironment;
         refObj.GetComponent<HotspotVideoPlayerManager>().mainOBJ = mainEnvironment;

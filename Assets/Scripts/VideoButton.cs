@@ -8,6 +8,7 @@ public class VideoButton : MonoBehaviour
     public GameObject buttonVideoObject;
     public Text myLabelText;
     private Button myButton;
+    public Image buttonImage;
     private void Start()
     {
         myButton = GetComponent<Button>();
