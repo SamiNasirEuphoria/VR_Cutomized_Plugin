@@ -7,6 +7,7 @@ public class VideoButton : MonoBehaviour
 {
     public GameObject buttonVideoObject;
     public Text myLabelText;
+    public Text myDescriptionText;
     private Button myButton;
     public Image buttonImage;
     private void Start()

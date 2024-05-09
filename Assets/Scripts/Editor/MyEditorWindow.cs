@@ -10,6 +10,7 @@ using UnityEngine.Video;
 public class SceneData
 {
     public string tagline;
+    public string description;
     public VideoClip video;
     public List<HotspotData> hotspots = new List<HotspotData>();
     public Texture2D thumbnail;
@@ -96,9 +97,11 @@ public class MyEditorWindow : EditorWindow
             GUILayout.Label("Scene " + (i + 1), EditorStyles.boldLabel);
 
             SceneData sceneData = sceneDataList[i];
-            GUILayout.Label("[Max lenght is upto 10 characters]",EditorStyles.boldLabel );
+            GUILayout.Label("[Max lenght is upto 25 characters]",EditorStyles.boldLabel );
             sceneData.tagline = EditorGUILayout.TextField("Video Label:", sceneData.tagline);
-            
+            GUILayout.Label("[Max lenght is upto 40 characters]", EditorStyles.boldLabel);
+            sceneData.description = EditorGUILayout.TextField("Video Description:", sceneData.description);
+            GUILayout.Space(5);
             sceneData.video = (VideoClip)EditorGUILayout.ObjectField("360 Video:", sceneData.video, typeof(VideoClip), false);
             sceneData.thumbnail = (Texture2D)EditorGUILayout.ObjectField("Video Thumbnail:", sceneData.thumbnail, typeof(Texture2D), false);
             //store the video names here
@@ -221,6 +224,7 @@ public class MyEditorWindow : EditorWindow
 
             VideoPlayerManager videoObjectData = videoObject.GetComponent<VideoPlayerManager>();
             myButton.myLabelText.text = sceneDataList[i].tagline;
+            myButton.myDescriptionText.text = sceneDataList[i].description;
             // now project shifted from passing data into buttons to gameobjects video
             videoObjectData.videoName = sceneDataList[i].video.name;
 
