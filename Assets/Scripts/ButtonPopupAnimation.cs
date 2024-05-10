@@ -19,32 +19,26 @@ public class ButtonPopupAnimation : MonoBehaviour, IPointerEnterHandler, IPointe
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!check)
-        { 
-           buttonTransform.DOScale(Vector3.one * 1.25f, 0.75f);
-        }
-        
+        buttonTransform.DOScale(Vector3.one * 1.15f, 0.75f);    
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-            if (!check)
-            {
-                buttonTransform.DOScale(Vector3.one, 0.75f);
-            }
+        buttonTransform.DOScale(Vector3.one, 0.75f);
     }
     public void Clicked()
     {
        
         if (!isPlayPause)
         {
-            buttonTransform.DOScale(Vector3.one * 1.55f, 0.75f);
-            button.interactable = false;
-            StartCoroutine(Wait());
+            buttonTransform.DOScale(Vector3.one * 1.25f, 0.75f);
+            buttonTransform.DOScale(Vector3.one, 0.75f);
+            // button.interactable = false;
+            // StartCoroutine(Wait());
             check = true;
         }
         else
         {
-            buttonTransform.DOScale(Vector3.one * 1.55f, 0.75f);
+            buttonTransform.DOScale(Vector3.one * 1.25f, 0.75f);
             buttonTransform.DOScale(Vector3.one, 0.75f);
         }
     }

@@ -15533,10 +15533,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VRUISystem_init_m55FB34C998130C0FE544349
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_6 = __this->___cameraCaster_23;
 		NullCheck(L_6);
 		Camera_set_fieldOfView_m5AA9EED4D1603A1DEDBF883D9C42814B2BDEB777(L_6, (5.0f), NULL);
-		// cameraCaster.farClipPlane = 9999f;
+		// cameraCaster.farClipPlane = 999999f;
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_7 = __this->___cameraCaster_23;
 		NullCheck(L_7);
-		Camera_set_farClipPlane_m84EF39B09573168734613481FD979BFF31C60139(L_7, (9999.0f), NULL);
+		Camera_set_farClipPlane_m84EF39B09573168734613481FD979BFF31C60139(L_7, (999999.0f), NULL);
 		// cameraCaster.nearClipPlane = 0.01f;
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_8 = __this->___cameraCaster_23;
 		NullCheck(L_8);

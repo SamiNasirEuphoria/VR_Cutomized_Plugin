@@ -41,6 +41,7 @@ public enum HotspotType
 public class MyEditorWindow : EditorWindow
 {
     private string projectName = "";
+    private string companyName = "";
     private string packageName = "";
     private Texture2D icon;
     private Texture2D homeImage;
@@ -62,13 +63,20 @@ public class MyEditorWindow : EditorWindow
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Company Name", GUILayout.Width(EditorGUIUtility.labelWidth));
+        companyName = EditorGUILayout.TextField(companyName);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Package Name", GUILayout.Width(EditorGUIUtility.labelWidth));
-        packageName = "com." + projectName.Replace(" ", ".").ToLower();
+        //EditorGUILayout.LabelField("Company Name", GUILayout.Width(EditorGUIUtility.labelWidth));
+        packageName = "com." + companyName.Replace(" ", "").ToLower() +"."+ projectName.Replace(" ", "").ToLower();
         EditorGUI.BeginDisabledGroup(true);
         EditorGUILayout.TextField(packageName);
         EditorGUI.EndDisabledGroup();
         EditorGUILayout.EndHorizontal();
 
+        
         icon = (Texture2D)EditorGUILayout.ObjectField("Icon", icon, typeof(Texture2D), false);
 
 

@@ -30,7 +30,7 @@ public class VideoPlayerManager : MonoBehaviour
         GameObject refObj = Instantiate(hotspotObjectPrefab, this.gameObject.transform);
         GameObject btnObj = Instantiate(hotspotButtonPrefab, contentObjectOfHotspot.transform);
         btnObj.transform.position = new Vector3(btnObj.transform.position.x, btnObj.transform.position.y + count, btnObj.transform.position.z);
-        count -= 60;
+        count += 60;
         HotspotButton btn = btnObj.GetComponent<HotspotButton>();
         btn.mainEnvironment = mainEnvironment;
         refObj.GetComponent<HotspotVideoPlayerManager>().mainOBJ = mainEnvironment;
