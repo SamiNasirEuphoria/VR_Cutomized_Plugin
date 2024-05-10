@@ -118,6 +118,8 @@ namespace BNG {
                 cameraCaster = go.AddComponent<Camera>();
                 cameraCaster.stereoTargetEye = StereoTargetEyeMask.None;
                 cameraCaster.fieldOfView = 5f;
+                //this line is self added
+                cameraCaster.farClipPlane = 9999f;
                 cameraCaster.nearClipPlane = 0.01f;
                 cameraCaster.clearFlags = CameraClearFlags.Nothing;
                 cameraCaster.enabled = false;
