@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 [RequireComponent(typeof(Button))]
 public class VideoButton : MonoBehaviour
 {
     public GameObject buttonVideoObject;
-    public Text myLabelText;
-    public Text myDescriptionText;
+    public TMP_Text myLabelText;
+    public TMP_Text myDescriptionText;
     private Button myButton;
     public Image buttonImage;
     private void Start()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 using RenderHeads.Media.AVProVideo;
 
@@ -26,13 +27,13 @@ public class HotspotVideoPlayerManager : MonoBehaviour
     public GameObject hotspotImage;
     public GameObject videoPlayerObject;
     public GameObject textObject;
-    public Text hotspotLabelObject;
+    //public Text hotspotLabelObject;
     [Space(2)]
     [Header("[Reference Container to hold data]")]
     public Image myImage;
     public DisplayUGUI myCanvesVideo;
     public MediaPlayer hotspotMediaPlayer;
-    public Text myText;
+    public TMP_Text myText;
 
     [Space(5)]
     [Header("Video Player Object Management Assets")]

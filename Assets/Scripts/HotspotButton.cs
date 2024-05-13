@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using TMPro;
 
 public class HotspotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject buttonVideoObject;
     [HideInInspector]
     public GameObject mainEnvironment;
-    public Text myLabelText;
+    public TMP_Text myLabelText;
     public Button myButton;
     private void Start()
     {

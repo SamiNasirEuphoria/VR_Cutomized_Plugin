@@ -3,6 +3,7 @@ using UnityEditor;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using System.Text.RegularExpressions;
 
 
 // SceneData class to hold scene-related data
@@ -56,21 +57,35 @@ public class MyEditorWindow : EditorWindow
     private void OnGUI()
     {
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-        
-        EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Project Name", GUILayout.Width(EditorGUIUtility.labelWidth));
-        projectName = EditorGUILayout.TextField(projectName);
-        EditorGUILayout.EndHorizontal();
+
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Company Name", GUILayout.Width(EditorGUIUtility.labelWidth));
-        companyName = EditorGUILayout.TextField(companyName);
+        companyName = EditorGUILayout.TextField(RemoveSpecialCharactersAndNumbers(companyName));
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Project Name", GUILayout.Width(EditorGUIUtility.labelWidth));
+        projectName = EditorGUILayout.TextField(RemoveSpecialCharactersAndNumbers(projectName));
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Package Name", GUILayout.Width(EditorGUIUtility.labelWidth));
-        //EditorGUILayout.LabelField("Company Name", GUILayout.Width(EditorGUIUtility.labelWidth));
-        packageName = "com." + companyName.Replace(" ", "").ToLower() +"."+ projectName.Replace(" ", "").ToLower();
+       
+        if (string.IsNullOrEmpty(companyName))
+        {
+            packageName = "com." +  projectName.Replace(" ", "").ToLower();
+        }
+        else if (string.IsNullOrEmpty(projectName))
+        {
+            packageName = "com." + companyName.Replace(" ", "").ToLower();
+        }
+        else
+        {
+            packageName = "com." + companyName.Replace(" ", "").ToLower() + "." + projectName.Replace(" ", "").ToLower();
+        }
+
+
         EditorGUI.BeginDisabledGroup(true);
         EditorGUILayout.TextField(packageName);
         EditorGUI.EndDisabledGroup();
@@ -195,9 +210,15 @@ public class MyEditorWindow : EditorWindow
            }
        }
    }
-  
 
 
+    private string RemoveSpecialCharactersAndNumbers(string input)
+    {
+        // Define the pattern to match any character that is not a letter
+        string pattern = "[^a-zA-Z]";
+        // Use Regex.Replace to remove all matches of the pattern
+        return Regex.Replace(input, pattern, "");
+    }
 
     private void SpawnVideoButtons()
     {
