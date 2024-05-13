@@ -24,9 +24,10 @@ public class ButtonPopupAnimation : MonoBehaviour, IPointerEnterHandler, IPointe
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        howerButton = true;
         if (mainScreenButton)
         {
+            button.interactable = false;
+            howerButton = true;
             StartCoroutine(WaitCoroutine());
         }else
         {
@@ -36,13 +37,17 @@ public class ButtonPopupAnimation : MonoBehaviour, IPointerEnterHandler, IPointe
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        howerButton = false;
+       
         buttonTransform.DOScale(Vector3.one, 0.75f);
-        button.interactable = false;
+        if (mainScreenButton)
+        {
+            howerButton = false;
+            button.interactable = false;
+        }
     }
     IEnumerator WaitCoroutine()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.75f);
         if (howerButton)
         {
             buttonTransform.DOScale(Vector3.one * 1.15f, 0.75f);
@@ -60,6 +65,11 @@ public class ButtonPopupAnimation : MonoBehaviour, IPointerEnterHandler, IPointe
             // button.interactable = false;
             // StartCoroutine(Wait());
             check = true;
+        }
+        else if (howerButton)
+        {
+            howerButton = false;
+            button.interactable = false;
         }
         else
         {
