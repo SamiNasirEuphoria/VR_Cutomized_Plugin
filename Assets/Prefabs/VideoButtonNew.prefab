@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayPause: 0
+  mainScreenButton: 1
 --- !u!114 &4701112915184286242
 MonoBehaviour:
   m_ObjectHideFlags: 0

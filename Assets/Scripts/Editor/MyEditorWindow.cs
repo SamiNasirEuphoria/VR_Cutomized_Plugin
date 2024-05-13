@@ -242,6 +242,9 @@ public class MyEditorWindow : EditorWindow
             }
 
             GameObject videoButtonInstance = Instantiate(videoButtonPrefab, contentObject.transform);
+            //Vector2 sizeDelta = contentObject.GetComponent<RectTransform>().sizeDelta;
+            //sizeDelta.x += 1300;
+            //contentObject.GetComponent<RectTransform>().sizeDelta = sizeDelta;
             GameObject videoObject = Instantiate(videoObjectPrefab, videoObjectHolder.transform);
             //new line of code added
             VideoButton myButton = videoButtonInstance.GetComponent<VideoButton>();
@@ -343,6 +346,7 @@ public class MyEditorWindow : EditorWindow
                 if (child.CompareTag("VideoButton"))
                 {
                     objectsToDestroy.Add(child.gameObject);
+
                 }
             }
             foreach (Transform child in videoObject.transform)

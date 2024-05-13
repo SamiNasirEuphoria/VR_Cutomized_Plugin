@@ -8,22 +8,47 @@ public class ButtonPopupAnimation : MonoBehaviour, IPointerEnterHandler, IPointe
 {
     private Button button;
     private RectTransform buttonTransform;
-    private bool check;
-    public bool isPlayPause;
+    private bool check, howerButton;
+    public bool isPlayPause, mainScreenButton;
     void Start()
     {
+       
         button = GetComponent<Button>();
         button.interactable = true;
         buttonTransform = button.GetComponent<RectTransform>();
         button.onClick.AddListener(Clicked);
+        if (mainScreenButton)
+        {
+            button.interactable = false;
+        }
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        buttonTransform.DOScale(Vector3.one * 1.15f, 0.75f);    
+        howerButton = true;
+        if (mainScreenButton)
+        {
+            StartCoroutine(WaitCoroutine());
+        }else
+        {
+            buttonTransform.DOScale(Vector3.one * 1.15f, 0.75f);
+        }
+       
     }
     public void OnPointerExit(PointerEventData eventData)
     {
+        howerButton = false;
         buttonTransform.DOScale(Vector3.one, 0.75f);
+        button.interactable = false;
+    }
+    IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(2.0f);
+        if (howerButton)
+        {
+            buttonTransform.DOScale(Vector3.one * 1.15f, 0.75f);
+            button.interactable = true;
+        }
+       
     }
     public void Clicked()
     {

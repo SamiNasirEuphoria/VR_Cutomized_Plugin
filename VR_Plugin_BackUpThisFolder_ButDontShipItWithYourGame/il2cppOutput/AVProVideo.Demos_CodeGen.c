@@ -245,7 +245,7 @@ static Il2CppMethodPointer s_methodPointers[76] =
 };
 static const int32_t s_InvokerIndices[76] = 
 {
-	8329,
+	8326,
 	5370,
 	5370,
 	5370,
@@ -307,7 +307,7 @@ static const int32_t s_InvokerIndices[76] =
 	4306,
 	4306,
 	4306,
-	8329,
+	8326,
 	5254,
 	4306,
 	4306,
@@ -319,7 +319,7 @@ static const int32_t s_InvokerIndices[76] =
 	5370,
 	4279,
 	5370,
-	7485,
+	7483,
 	5370,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AVProVideo_Demos_CodeGenModule;

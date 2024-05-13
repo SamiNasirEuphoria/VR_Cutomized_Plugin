@@ -24,7 +24,7 @@ public class HotspotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Image fillImage;
     public float fillSpeed = 0.5f;
     public float decreaseSpeed = 0.2f;
-
+    private float fillAmount;
     private Coroutine fillCoroutine;
     private Button button;
 
@@ -49,8 +49,8 @@ public class HotspotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     IEnumerator FillImageCoroutine()
     {
-        float fillAmount = 0f;
-
+        //float fillAmount = 0f;
+        fillAmount = 0f;
         while (fillAmount < 1f)
         {
             fillAmount += fillSpeed * Time.deltaTime;
@@ -69,7 +69,7 @@ public class HotspotButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     IEnumerator DecreaseFillAmountCoroutine()
     {
-        float fillAmount = fillImage.fillAmount;
+        fillAmount = fillImage.fillAmount;
 
         while (fillAmount > 0f)
         {

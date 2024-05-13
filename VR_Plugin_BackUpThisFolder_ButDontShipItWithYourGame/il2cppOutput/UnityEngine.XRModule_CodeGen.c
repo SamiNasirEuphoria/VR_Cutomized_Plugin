@@ -271,21 +271,9 @@ extern void MeshTransformList_Dispose_m7655ACDE6BC605B30EF2BC387A7B9D0F4D9EED19 
 extern void XRDisplaySubsystemDescriptor__ctor_mB9B2993D74FFC580731C03B390C764260458FAA6 (void);
 // 0x00000085 System.Void UnityEngine.XR.XRDisplaySubsystem::InvokeDisplayFocusChanged(System.Boolean)
 extern void XRDisplaySubsystem_InvokeDisplayFocusChanged_m57036DB43BB9F6BF12AADC268AC47D190378BE56 (void);
-// 0x00000086 System.Boolean UnityEngine.XR.XRDisplaySubsystem::TryGetAppGPUTimeLastFrame(System.Single&)
-extern void XRDisplaySubsystem_TryGetAppGPUTimeLastFrame_m17BABDCD1716475A2473143A47ECCFE64F17A766 (void);
-// 0x00000087 System.Boolean UnityEngine.XR.XRDisplaySubsystem::TryGetCompositorGPUTimeLastFrame(System.Single&)
-extern void XRDisplaySubsystem_TryGetCompositorGPUTimeLastFrame_m9D8587317EBC9785C2AEAD86ACC3B939A497E82D (void);
-// 0x00000088 System.Boolean UnityEngine.XR.XRDisplaySubsystem::TryGetDisplayRefreshRate(System.Single&)
-extern void XRDisplaySubsystem_TryGetDisplayRefreshRate_mC92C72C1B54E33C4281B714483222D5CD11866BB (void);
-// 0x00000089 System.Boolean UnityEngine.XR.XRDisplaySubsystem::TryGetMotionToPhoton(System.Single&)
-extern void XRDisplaySubsystem_TryGetMotionToPhoton_mEF734C48F96C17C3A63305B75988F1851298D3E6 (void);
-// 0x0000008A System.Void UnityEngine.XR.XRDisplaySubsystem::.ctor()
+// 0x00000086 System.Void UnityEngine.XR.XRDisplaySubsystem::.ctor()
 extern void XRDisplaySubsystem__ctor_m5DA92849F107C6A802BF584D5E328FF2DB971B01 (void);
-// 0x0000008B System.Boolean UnityEngine.XR.Provider.XRStats::TryGetStat(UnityEngine.IntegratedSubsystem,System.String,System.Single&)
-extern void XRStats_TryGetStat_mE91924B240A89BA396554CE3742A06210514FA8B (void);
-// 0x0000008C System.Boolean UnityEngine.XR.Provider.XRStats::TryGetStat_Internal(System.IntPtr,System.String,System.Single&)
-extern void XRStats_TryGetStat_Internal_mDE5287222A37D521F603FAF12C7AB875E43E5DE5 (void);
-static Il2CppMethodPointer s_methodPointers[140] = 
+static Il2CppMethodPointer s_methodPointers[134] = 
 {
 	EmbeddedAttribute__ctor_m3FF623BFEE0DB7F6FD99E1EAFE20C5581224D314,
 	IsReadOnlyAttribute__ctor_m7C0ECD764E09B041BA7629AC5C020D9972AC8697,
@@ -420,13 +408,7 @@ static Il2CppMethodPointer s_methodPointers[140] =
 	MeshTransformList_Dispose_m7655ACDE6BC605B30EF2BC387A7B9D0F4D9EED19,
 	XRDisplaySubsystemDescriptor__ctor_mB9B2993D74FFC580731C03B390C764260458FAA6,
 	XRDisplaySubsystem_InvokeDisplayFocusChanged_m57036DB43BB9F6BF12AADC268AC47D190378BE56,
-	XRDisplaySubsystem_TryGetAppGPUTimeLastFrame_m17BABDCD1716475A2473143A47ECCFE64F17A766,
-	XRDisplaySubsystem_TryGetCompositorGPUTimeLastFrame_m9D8587317EBC9785C2AEAD86ACC3B939A497E82D,
-	XRDisplaySubsystem_TryGetDisplayRefreshRate_mC92C72C1B54E33C4281B714483222D5CD11866BB,
-	XRDisplaySubsystem_TryGetMotionToPhoton_mEF734C48F96C17C3A63305B75988F1851298D3E6,
 	XRDisplaySubsystem__ctor_m5DA92849F107C6A802BF584D5E328FF2DB971B01,
-	XRStats_TryGetStat_mE91924B240A89BA396554CE3742A06210514FA8B,
-	XRStats_TryGetStat_Internal_mDE5287222A37D521F603FAF12C7AB875E43E5DE5,
 };
 extern void HapticCapabilities_get_numChannels_m23871C9860B4A1F6E22DE4579A7550A7A9382BA9_AdjustorThunk (void);
 extern void HapticCapabilities_get_supportsImpulse_m855193672304BD935913E215B690B14952E0C59C_AdjustorThunk (void);
@@ -575,7 +557,7 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[72] =
 	{ 0x0600007F, MeshGenerationResult_GetHashCode_mA542C935FE2ABB8EC0A3CE001267176095F7DCBC_AdjustorThunk },
 	{ 0x06000082, MeshTransformList_Dispose_m0F0B77B84E50F02EB1A48751831808F9C69E0636_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[140] = 
+static const int32_t s_InvokerIndices[134] = 
 {
 	5370,
 	5370,
@@ -599,7 +581,7 @@ static const int32_t s_InvokerIndices[140] =
 	0,
 	0,
 	0,
-	8406,
+	8403,
 	4390,
 	5357,
 	5154,
@@ -635,33 +617,33 @@ static const int32_t s_InvokerIndices[140] =
 	3073,
 	2982,
 	5223,
-	7885,
-	8218,
-	7659,
-	8218,
-	8218,
-	8218,
-	8218,
-	8218,
-	8218,
-	7663,
-	8218,
+	7882,
+	8215,
+	7657,
+	8215,
+	8215,
+	8215,
+	8215,
+	8215,
+	8215,
+	7661,
+	8215,
 	6114,
-	7229,
-	6641,
-	6641,
-	6641,
-	6641,
-	6641,
-	6641,
-	7826,
-	8027,
-	8027,
-	8170,
-	8218,
-	8218,
-	8176,
-	6461,
+	7227,
+	6639,
+	6639,
+	6639,
+	6639,
+	6639,
+	6639,
+	7823,
+	8024,
+	8024,
+	8167,
+	8215,
+	8215,
+	8173,
+	6460,
 	4390,
 	5223,
 	4279,
@@ -677,17 +659,17 @@ static const int32_t s_InvokerIndices[140] =
 	5223,
 	4306,
 	4306,
-	8216,
-	8216,
+	8213,
+	8213,
 	5370,
 	5370,
 	5254,
 	5223,
 	3073,
 	3067,
-	8406,
-	7324,
-	6699,
+	8403,
+	7322,
+	6697,
 	6161,
 	5802,
 	5670,
@@ -707,16 +689,10 @@ static const int32_t s_InvokerIndices[140] =
 	2438,
 	5370,
 	5370,
-	8216,
+	8213,
 	5370,
 	4208,
-	2964,
-	2964,
-	2964,
-	2964,
 	5370,
-	6618,
-	6603,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
@@ -737,7 +713,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_XRModule_CodeGenModule;
 const Il2CppCodeGenModule g_UnityEngine_XRModule_CodeGenModule = 
 {
 	"UnityEngine.XRModule.dll",
-	140,
+	134,
 	s_methodPointers,
 	72,
 	s_adjustorThunks,
