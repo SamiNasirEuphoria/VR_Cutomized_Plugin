@@ -6,7 +6,7 @@ using RenderHeads.Media.AVProVideo;
 public class VideoPlayerManager : MonoBehaviour
 {
     public Button backToMain;
-    public GameObject hotspotButtonPrefab, contentObjectOfHotspot, hotspotObjectPrefab, mainEnvironment;
+    public GameObject hotspotButtonPrefab, hotspotObjectPrefab, mainEnvironment;
     public string hotspotLabel;
     public MediaPlayer videoPlayer;
     public ApplyToMesh mainVideoPlayer;
@@ -28,7 +28,8 @@ public class VideoPlayerManager : MonoBehaviour
     public void InstantiateHotspotObjects()
     {
         GameObject refObj = Instantiate(hotspotObjectPrefab, this.gameObject.transform);
-        GameObject btnObj = Instantiate(hotspotButtonPrefab, contentObjectOfHotspot.transform);
+        //GameObject btnObj = Instantiate(hotspotButtonPrefab, contentObjectOfHotspot.transform);
+        GameObject btnObj = Instantiate(hotspotButtonPrefab, mainEnvironment.transform);
         btnObj.transform.position = new Vector3(btnObj.transform.position.x, btnObj.transform.position.y + count, btnObj.transform.position.z);
         count += 60;
         HotspotButton btn = btnObj.GetComponent<HotspotButton>();

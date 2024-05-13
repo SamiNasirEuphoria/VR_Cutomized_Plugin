@@ -119,7 +119,7 @@ namespace BNG {
                 cameraCaster.stereoTargetEye = StereoTargetEyeMask.None;
                 cameraCaster.fieldOfView = 5f;
                 //this line is self added
-                cameraCaster.farClipPlane = 999999f;
+                cameraCaster.farClipPlane = 99999999f;
                 cameraCaster.nearClipPlane = 0.01f;
                 cameraCaster.clearFlags = CameraClearFlags.Nothing;
                 cameraCaster.enabled = false;

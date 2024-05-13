@@ -128,6 +128,8 @@ public class ExperienceManager : MonoBehaviour
         //raycast.enabled = false;
         //myAnimator.SetTrigger("FadeIn");
         buttonResetState.Invoke();
+        SceneManager.Instance.mainCanvasObject.SetActive(true);
+        this.gameObject.SetActive(false);
         //yield return new WaitForSeconds(0.05f);
         //yield return FadeScreen(myGroup, 0f, fadeOutScreen);
         yield return null;
