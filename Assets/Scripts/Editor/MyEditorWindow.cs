@@ -51,7 +51,7 @@ public class MyEditorWindow : EditorWindow
     private int numberOfScenes = 0;
     private List<SceneData> sceneDataList = new List<SceneData>();
     private Vector2 scrollPosition;
-
+    GameObject contentObject;
     //new method to apply texture to 360 imagew
     
     private void OnGUI()
@@ -222,7 +222,7 @@ public class MyEditorWindow : EditorWindow
 
     private void SpawnVideoButtons()
     {
-        GameObject contentObject = GameObject.Find("Content");
+        contentObject = GameObject.Find("Content");
         GameObject videoButtonPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/VideoButtonNew.prefab");
         GameObject videoObjectHolder = GameObject.Find("VideoPlayerObject");
         GameObject videoObjectPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/VideoPlayerObject.prefab");
@@ -242,9 +242,7 @@ public class MyEditorWindow : EditorWindow
             }
 
             GameObject videoButtonInstance = Instantiate(videoButtonPrefab, contentObject.transform);
-            //Vector2 sizeDelta = contentObject.GetComponent<RectTransform>().sizeDelta;
-            //sizeDelta.x += 1300;
-            //contentObject.GetComponent<RectTransform>().sizeDelta = sizeDelta;
+            
             GameObject videoObject = Instantiate(videoObjectPrefab, videoObjectHolder.transform);
             //new line of code added
             VideoButton myButton = videoButtonInstance.GetComponent<VideoButton>();
@@ -393,6 +391,17 @@ public class MyEditorWindow : EditorWindow
         material.mainTexture = homeImage;
         // Spawn VideoButton prefabs
         SpawnVideoButtons();
+
+        //add area to content size
+        RectTransform myTransform = contentObject.GetComponent<RectTransform>();
+        Vector2 sizeModified = myTransform.sizeDelta;
+        sizeModified.x = 0;
+        myTransform.sizeDelta = sizeModified;
+        for (int i=0; i< numberOfScenes; i++)
+        {
+            sizeModified.x += 1300;
+        }
+        myTransform.sizeDelta = sizeModified;
 
     }
 
