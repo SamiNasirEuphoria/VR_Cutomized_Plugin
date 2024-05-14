@@ -72,7 +72,7 @@ public class HotspotVideoPlayerManager : MonoBehaviour
 
             case "Video":
                 videoPlayerObject.SetActive(true);
-                hotspotMediaPlayer.OpenMedia(new MediaPath("360 Videos/"+hotspotVideoName + ".mp4", MediaPathType.RelativeToDataFolder), autoPlay: true);
+                hotspotMediaPlayer.OpenMedia(new MediaPath(hotspotVideoName + ".mp4", MediaPathType.RelativeToStreamingAssetsFolder), autoPlay: true);
                 break;
 
             case "Text":

@@ -53,7 +53,13 @@ public class MyEditorWindow : EditorWindow
     private Vector2 scrollPosition;
     GameObject contentObject;
     //new method to apply texture to 360 imagew
-    
+
+    [MenuItem("VR Plugin/Open My Editor Window")]
+    public static void ShowWindow()
+    {
+        // Open the custom Editor window
+        GetWindow<MyEditorWindow>("My Editor Window");
+    }
     private void OnGUI()
     {
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
