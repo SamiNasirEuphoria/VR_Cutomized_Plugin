@@ -47,7 +47,7 @@ public class ButtonPopupAnimation : MonoBehaviour, IPointerEnterHandler, IPointe
     }
     IEnumerator WaitCoroutine()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.70f);
         if (howerButton)
         {
             buttonTransform.DOScale(Vector3.one * 1.15f, 0.75f);
