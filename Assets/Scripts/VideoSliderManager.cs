@@ -93,7 +93,7 @@ public class VideoSliderManager : MonoBehaviour
 		if (_mediaPlayer && _mediaPlayer.Control != null)
 		{
 			_wasPlayingBeforeTimelineDrag = _mediaPlayer.Control.IsPlaying();
-			manager.VideoForwardStart();
+			//manager.VideoForwardStart();
 			if (_wasPlayingBeforeTimelineDrag)
 			{
 				_mediaPlayer.Pause();
@@ -112,7 +112,7 @@ public class VideoSliderManager : MonoBehaviour
 			_isHoveringOverTimeline = true;
 			//newly added line
 			_mediaPlayer.Play();
-			manager.VideoForwardStop();
+			//manager.VideoForwardStop();
 			toggleButton.ToggleButton1();
 			Debug.Log("Value changing");
 		}

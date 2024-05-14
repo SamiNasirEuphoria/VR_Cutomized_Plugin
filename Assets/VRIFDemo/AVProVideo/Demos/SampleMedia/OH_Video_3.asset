@@ -15,7 +15,7 @@ MonoBehaviour:
   _alias: 
   _mediaPath:
     _pathType: 2
-    _path: AVProVideoSamples/OH_Video_3.mp4
+    _path: OH_Video_3.mp4
   _hints:
     transparency: 0
     alphaPacking: 1

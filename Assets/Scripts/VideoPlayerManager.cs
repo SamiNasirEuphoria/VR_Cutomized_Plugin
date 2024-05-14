@@ -23,7 +23,7 @@ public class VideoPlayerManager : MonoBehaviour
         videoPlayer = SceneManager.Instance.myMediaPlayer;
         backToMain.onClick.AddListener(BackToMain);
         mainVideoPlayer.Player = videoPlayer;
-        videoPlayer.OpenMedia(new MediaPath(videoName + ".mp4", MediaPathType.RelativeToStreamingAssetsFolder), autoPlay: true);
+        videoPlayer.OpenMedia(new MediaPath("360 Videos/"+videoName + ".mp4", MediaPathType.RelativeToDataFolder), autoPlay: true);
     }
     public void InstantiateHotspotObjects()
     {
