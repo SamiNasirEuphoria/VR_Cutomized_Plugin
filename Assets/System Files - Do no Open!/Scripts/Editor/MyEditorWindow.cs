@@ -229,9 +229,9 @@ public class MyEditorWindow : EditorWindow
     private void SpawnVideoButtons()
     {
         contentObject = GameObject.Find("Content");
-        GameObject videoButtonPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/VideoButtonNew.prefab");
+        GameObject videoButtonPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/System Files - Do no Open!/Prefabs/VideoButtonNew.prefab");
         GameObject videoObjectHolder = GameObject.Find("VideoPlayerObject");
-        GameObject videoObjectPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/VideoPlayerObject.prefab");
+        GameObject videoObjectPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/System Files - Do no Open!/Prefabs/VideoPlayerObject.prefab");
         if (contentObject == null)
         {
             Debug.LogError("Content object not found.");
@@ -407,7 +407,7 @@ public class MyEditorWindow : EditorWindow
             sizeModified.x += 1300;
         }
         myTransform.sizeDelta = sizeModified;
-
+       // EditorApplication.isPlaying = true;
     }
 
 
