@@ -374,7 +374,6 @@ public class MyEditorWindow : EditorWindow
     {
 
         PlayerSettings.applicationIdentifier = packageName;
-
         // Destroy existing VideoButton prefabs
         DestroyOldVideoButtons();
 
